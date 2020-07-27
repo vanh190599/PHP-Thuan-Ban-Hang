@@ -1,0 +1,21 @@
+- Write url là việc viết lại đường dẫn sao cho thân thiên hơn
+	- liên quan đến seo
+	- liên quan đến bảo mật
+- Để viết lại đường dẫn trong php, sử dụng file .htaccess
+	- file .htaccess có thể điều khiển được:
+		- rewrite url
+		- cho phép/không cho phép truy cập thư mục, file
+		- đặt mật khẩu khi truy cập vào thư mục
+		...
+- Rewrite url trong file .htaccess
+	- Ghi chú trong file: sử dụng ký hiệu # đầu dòng ghi chú
+	- Muốn rewrite cần bật chế độ rewrite bằng hàm: RewriteEngine On
+	- Chú ý: nếu cú pháp lệnh trong file .htaccess không đúng thì toàn bộ website không truy cập được
+	- Cú pháp rewrite:
+		RewriteRule ^duong-dan-ao$ duong-dan-thuc
+		VD: RewriteRule ^hello$ test1.php
+	- Truyền biến lên url
+		RewriteRule ^duongdanao/(.*)/(.*)$ tenfile.php?bien1=$1&bien2=$2
+		- có thể thau dấu / bằng các kí hiệu khác
+		- $1 tương ứng với (.*) đầu tiên từ trái qua phải
+		- $2 tương ứng với (.*) thứ hai từ trái qua phải

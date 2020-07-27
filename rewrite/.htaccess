@@ -1,0 +1,12 @@
+#bật chế độ rewrite
+	RewriteEngine On
+#hello -> test1.php
+	RewriteRule ^hello$ test1.php
+#php40/hello -> test2.php -> hello PHP40
+	RewriteRule ^php40/hello$ test2.php
+#truyền biến lên url
+#truyenbien/hello/php40
+	RewriteRule ^truyenbien/(.*)/(.*)$ test3.php?bien1=$1&bien2=$2
+#cong2so/5/3
+RewriteRule ^cong2so/(.*)/(.*)$ test4.php?so1=$1&so2=$2
+RewriteRule ^a/b/c$ test5.php

@@ -1,0 +1,22 @@
+- tao file hotNewsModel.php
+<?php
+	trait hotNewsModel{}
+?>
+- tao file hotNewsController.php
+<?php
+	include "models/frontend/hotNewsModel.php";
+	class hotNewsController extends Controller{
+		use hotNewsModel;
+		public function hotNews(){
+			$this->renderHTML("views/frontend/hotNewsView.php");
+		}
+	}
+?>
+- tao file hotNewsView.php
+	- cut doan code hotNews tu file layout paste vao day
+- Trong file layout.php, den dong can load MVC hotNews go doan code sau
+<?php
+	include "controllers/frontend/hotNewsController.php";
+	$objHotNews = new hotNewsController();
+	$objHotNews->hotNews();
+?>

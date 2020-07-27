@@ -1,0 +1,22 @@
+- Ghep giao dien trang frontend
+	1. copy cac thu muc images, js, css... vao public/frontend
+	2. Controller mac dinh neu truong url khong co bien controller se la homeController
+		- Tao homeController.php
+			include "models/homeModel.php";
+			class homeController extends Controller{
+				//neu tren url khong truyen bien action thi mac dinh action=index
+				public function index(){
+					//load view
+					$this->renderHTML("views/frontend/homeView.php");
+				}
+			}
+		- Tao homeModel.php
+		- Tao homeView.php
+			//set duong dan cho bien $layout
+			$this->layout = "views/frontend/layout.php";
+	3. Tao file layout.php (trong views/frontend) de load khung giao dien web frontend
+		- copy html cua file trang-chu.html paste vao day
+		- replace all duong dan css/ thanh assets/frontend/css/
+		- replace all duong dan js/ thanh assets/frontend/js/
+		- replace all duong dan img/ thanh assets/frontend/img/
+	4. Chay duong dan: http://localhost/php40_project_news/index.php
